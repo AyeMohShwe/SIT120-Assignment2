@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Week4 Prac</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id='app'>
+        <h2>Week4 - Task1 - Declarative Rendering</h2>
+        {{message}}
+        <img v-img="flowers" src="corina-ardeleanu-sWlxCweDzzs-unsplash.jpg">
+        <p>Created by {{name}}</p>
+        <ul>
+            <li>
+              <strong>{{flower1}}</strong>
+              are Yellow!
+            </li>
+            <li>
+              <strong>{{flower2}}</strong> 
+              are Violet!
+            </li>
+            <li>
+              <strong>{{flower3}}</strong> 
+              are Red!
+            </li>
+        </ul>        
+    </div>
+    <div id="app-2">
+        <span v-bind:title="message">
+          Hover your mouse over me for a few seconds
+          to see my dynamically bound title!
+        </span>
+    </div>
+    <div id="app-3">
+        <h3>Click me to see the owner of the above image!</h3>
+        <button class="btn btn-success" @click="toggleOwner">Display the image owner!</button>
+        <div v-if="showOwner">
+            <h3>Horray!</h3>
+            <p>Her name is Corina Ardeleanu!</p>
+        </div>
+        <div v-else>
+            <h3>NO!</h3>
+            <p>Okay! The photo was posted on Unsplash!</p>
+        </div>
+        <div v-show="showOwner">
+            <h3>Thank You!</h3>>
+        </div>
+    </div>
+    <div id="app-4">
+        <ol>
+          <li v-for="todo in todos">
+            {{ todo.text }}
+          </li>
+        </ol>
+    </div>
+</body>
+<script src='./app.js'></script>
+</html>
