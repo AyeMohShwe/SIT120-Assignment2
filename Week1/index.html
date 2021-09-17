@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Week1Prac</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script>
+    function getScores(){
+  
+      var  result=""; 
+  
+      var physScores = document.getElementById('txtPhysics').value;
+      var bioScores = document.getElementById('txtBiology').value;
+      var chemScores = document.getElementById('txtChemistry').value;
+      var mathsScores = document.getElementById('txtMaths').value;
+  
+      var totalScores = physScores - (- bioScores) - (- chemScores) - (- mathsScores);
+  
+      var averageScores = totalScores / 4;                  
+              
+      document.getElementById('txtStudentName').value = document.getElementById('txtName').value;
+      document.getElementById('txtStudentID').value = document.getElementById('txtID').value;
+      document.getElementById('txtTotalScores').value = totalScores;
+      document.getElementById('txtAvgScores').value = averageScores;
+    }
+           
+  </script>
+
+</head>
+    
+<body>
+
+    <h1>Blossom</h1>
+    <p>"Let us dance in the sun, wearing wild flowers in our hair" by Susan Polis</p>
+    <picture>
+      <img src="Images/meric-dagli-7NBO76G5JsE-unsplash.jpg" alt="" width="500" height="600">
+    </picture>
+
+    <h2>Browse by Category</h2>
+    <form>
+      <input type = "radio" id = "friendship" name = "category" value = "Friendship">
+      <label for ="friendship">Friendship</label><br>
+      <input type = "radio" id = "nature" name = "category" value = "Nature">
+      <label for ="nature">Nature</label><br>
+      <input type = "radio" id = "love" name = "category" value = "Love">
+      <label for ="love">Love</label><br>
+      <input type = "radio" id = "hope" name = "category" value = "Hope">
+      <label for ="hope">Hope</label><br>
+    </form>
+
+    <h2>Be a Member?</h2>
+    <p>Please fill in this form to be our member and get updates.</p>
+
+    <div class="container">
+      <form action="/action_page.php">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Your email address..">
+        
+        <label for="psw">Password</label>
+        <input type="password" id="psw" name="psw" placeholder="Enter Password.." pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+        <input type="submit" value="Submit">
+      </form>
+    </div> 
+    
+    <div id="message">
+      <h3>Password must contain the following:</h3>
+      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+      <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+      <p id="number" class="invalid">A <b>number</b></p>
+      <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+    </div>
+
+    <fieldset style="width:600px">
+      <legend><b>Get Total Score and Average:</b></legend>
+      Name:<input type="text" id="txtName">   
+      ID:<input type="text" id="txtID"> <br/><br/>
+      <table border="1">
+        <tr><td>Physics</td><td><input type="text" id="txtPhysics"></td></tr>
+        <tr><td>Biology</td><td><input type="text" id="txtBiology"></td></tr>
+        <tr><td>Chemistry</td><td><input type="text" id="txtChemistry"></td></tr>
+        <tr><td>Maths</td><td><input type="text" id="txtMaths"></td></tr>             
+      </table><br/><br/>
+      <input type="button" value="Calculate Scores" onClick="getScores()">
+    </fieldset>
+
+    <h2>Calculated Score Table</h2>
+  
+    <table border="1">
+      <tr><td>Name</td><td><input type="text" id="txtStudentName" readonly></td></tr>
+      <tr><td>ID</td><td><input type="text" id="txtStudentID" readonly></td></tr>
+      <tr><td>Total Scores</td><td><input type="text" id="txtTotalScores" readonly></td></tr>
+      <tr><td>Average Scores</td><td><input type="text" id="txtAvgScores" readonly></td></tr>
+    </table>
+
+    <script>
+      var myInput = document.getElementById("psw");
+      var letter = document.getElementById("letter");
+      var capital = document.getElementById("capital");
+      var number = document.getElementById("number");
+      var length = document.getElementById("length");
+      
+      myInput.onfocus = function() {
+        document.getElementById("message").style.display = "block";
+      }
+      
+      myInput.onblur = function() {
+        document.getElementById("message").style.display = "none";
+      }
+      
+      myInput.onkeyup = function() {
+        // Validate lowercase letters
+        var lowerCaseLetters = /[a-z]/g;
+        if(myInput.value.match(lowerCaseLetters)) {  
+          letter.classList.remove("invalid");
+          letter.classList.add("valid");
+        } else {
+          letter.classList.remove("valid");
+          letter.classList.add("invalid");
+        }
+        
+        // Validate capital letters
+        var upperCaseLetters = /[A-Z]/g;
+        if(myInput.value.match(upperCaseLetters)) {  
+          capital.classList.remove("invalid");
+          capital.classList.add("valid");
+        } else {
+          capital.classList.remove("valid");
+          capital.classList.add("invalid");
+        }
+      
+        // Validate numbers
+        var numbers = /[0-9]/g;
+        if(myInput.value.match(numbers)) {  
+          number.classList.remove("invalid");
+          number.classList.add("valid");
+        } else {
+          number.classList.remove("valid");
+          number.classList.add("invalid");
+        }
+        
+        // Validate length
+        if(myInput.value.length >= 8) {
+          length.classList.remove("invalid");
+          length.classList.add("valid");
+        } else {
+          length.classList.remove("valid");
+          length.classList.add("invalid");
+        }
+      }
+    </script>
+
+  </body>
+</html>
