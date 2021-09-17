@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week3</title>
+    <style>
+        h2, h3{
+            color:maroon;
+            font-style: italic;
+        }
+        button{
+            background-color: maroon;
+            border-radius: 30%;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+
+<h2>W3 - T1 - JavaScript String Method</h2>
+<h3>Click the following button to see the magic!</h3>
+<p>Convert the String to Uppercase Letters -</p>
+<p id = "demo"></p>
+<p>==========</p>
+<p> The length of Definitely, Maybe! - </p>
+<p id = "demo2"></p>
+<p>==========</p>
+<p>Let's replace Merry with Disney!</p>
+<p id = "demo3">Welcome to MerryLand!</p>
+<p>==========</p>
+
+<h2>W3 - T2 - JavaScript Number and Arrary Methods</h2>
+<p>Num toSring Method</p>
+<p id="demo4"></p>
+<p>**********</p>
+<p>When 40.323 is precised,</p>
+<p id="demo5"></p>
+<p>**********</p>
+<p>Array join Method</p>
+<p id="demo6"></p>
+<p>**********</p>
+<p>Array Pop Method</p>
+<p id="demo7"></p>
+<p>**********</p>
+
+<h2>W3 - T3 - JavaScript Get/Set Methods</h2>
+<p>Get Current Weekday</p>
+<p id="demo8"></p>
+<p>----------</p>
+
+<p>Get Month</p>
+<p id="demo9"></p>
+<p>----------</p>
+
+<p>Set Hours</p>
+<p id="demo10"></p>
+<p>----------</p>
+
+<p>Set Full Year</p>
+<p id="demo11"></p>
+<p>----------</p>
+
+<button onclick="myFunction()"> Click it!</button>
+<script>
+    function myFunction(){
+        var wday = new Date();
+        var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        document.getElementById("demo8").innerHTML = days[wday.getDay()];
+                
+        var d = new Date();
+        var n = d.getMonth();
+        document.getElementById("demo9").innerHTML = n;
+
+        var hrs = new Date();
+        hrs.setHours(10);
+        document.getElementById("demo10").innerHTML = hrs;       
+
+        var yr = new Date();
+        yr.setFullYear(2012);
+        document.getElementById("demo11").innerHTML = yr;       
+
+        var num = 3000;
+        var n = (num + 2000).toString();
+        document.getElementById("demo4").innerHTML = n;
+
+        var num = 40.323;
+        document.getElementById("demo5").innerHTML = num.toPrecision(2);
+
+        var names = ["Shelly", "Merry", "Jelly", "Terry"];
+        document.getElementById("demo6").innerHTML = names.join();
+
+        var genres = ["Indie", "Country", "Classic", "Alternative"];
+        genres.pop();
+        document.getElementById("demo7").innerHTML = genres;
+
+        var text = "Hello Week3!";
+        let res = text.toUpperCase();
+        document.getElementById("demo").innerHTML = res;
+
+        var txt = "Definitely, Maybe!";
+        document.getElementById("demo2").innerHTML = txt.length;
+
+        var str = document.getElementById("demo3").innerHTML; 
+        document.getElementById("demo3").innerHTML = str.replace("MerryLand", "DisneyLand");;
+    }
+</script>
+</body>
+</html>
