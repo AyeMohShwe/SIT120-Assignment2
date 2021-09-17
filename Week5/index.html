@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week5 Prac</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" class="container">
+        <h2>Welcome to Week5, {{yourname}}!</h2>
+        <h3>What is your favourite TvShow?</h3>
+        <p><input type="text" v-model="tvshow" placeholder="Enter titles.."/></p>
+        <p>It is {{tvshow}}</p>
+    </div>
+    <div id="app-2">
+        <h2>Here are some of the movies in my list!</h2>
+        <ol>
+            <towatch-movie
+            v-for="movie in myList"
+            v-bind:towatch="movie"
+            v-bind:key="movie.id"
+            ></towatch-movie>
+        </ol>
+    </div>
+</body>
+<script src='./app.js'></script>
+</html>
