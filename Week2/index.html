@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 Prac</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        button{
+        border:none;
+        color:honeydew;
+        background-color: maroon;
+        padding: 15px 32px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin-left: 47%;
+    }
+        audio{
+            margin-left:40%;
+        }
+</style>
+</head>
+<body>
+    <div class="header"> 
+        <a href="#" class="logo">Nicola's Chocolate Factory</a>
+    </div>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">Dark vs Milk</a>
+        <div class="FruitsNuts">
+          <button class="dropbtn">Fruits & Nuts 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="fruitsnuts-content">
+            <a href="#">Blueberry</a>
+            <a href="#">Raspberry</a>
+            <a href="#">Peanuts</a>
+            <a href="#">Almonds</a>
+          </div>
+        </div> 
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+      
+    <div style="padding-left:16px">
+        <h2>HOT CHOCOLATE PALACE</h2>
+        <p>Browse the navigation  bar to explore my delicious treats created with love for all the people around the world to enjoy!</p>
+    </div>
+    <img src="jessica-loaiza-DHYfjAe_eeo-unsplash.jpg" alt="Chocolate"></div>
+    <div class="content">
+        <h3>Factory Content</h3>
+        <p>Factory Content property has been added like this!</p>
+        <p>Look at resources:</p>
+        <p>
+        <a href="https://www.history.com/topics/ancient-americas/history-of-chocolate">Chocolate History</a><br>
+        <a href="https://en.wikipedia.org/wiki/Chocolate">All about Chocolate from Wikipedia</a>
+        </p>
+    </div>
+    <div class="api">
+        <h3>Click the button to get your coordinates.</h3>
+        <button onclick="getLocation()">Try It</button>
+        <p id="demo"></p>
+        <h4>Soothe Yourself with Our Selected Folk Music!</h4>
+        <audio controls>
+            <source src="bensound-sweet.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        const x = document.getElementById("demo");
+        function getLocation(){
+        try {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }catch{
+            x.innerHTML = err;
+        }
+        }
+        function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude;
+        }
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
+      
+</body>
+</html>
+ 
