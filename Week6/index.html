@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week6 Prac</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="app" class="container">
+        <h1>Feedback Form</h1>
+        First Name:
+        <p><input type="text" v-model="fname" placeholder="Enter first name.."/></p>
+        Last Name:
+        <p><input type="text" v-model="lname" placeholder="Enter last name.."/></p>
+        Email:
+        <p><input type="text" v-model="email" placeholder="Enter your email.."/></p>
+        <span>Feedback:</span>
+        <br>
+        <textarea v-model="message" placeholder="add multiple lines"></textarea>
+        <br>
+        <input type="checkbox" id="male" value="Male" v-model="selectGender">
+        <label for="male">Male</label>
+        <input type="checkbox" id="female" value="Female" v-model="selectGender">
+        <label for="female">Female</label>
+        <input type="checkbox" id="none" value="Prefer Not To Tell" v-model="selectGender">
+        <label for="none">Prefer Not To Tell</label>
+        <br>
+        <span>My Gender: {{ selectGender }}</span>
+        <br>
+        <p>Where would you like to be contacted?</p>
+        <input type="checkbox" id="gmail" value="Gmail" v-model="selectOption">
+        <label for="gmail">Gmail</label>
+        <input type="checkbox" id="phone" value="Phone" v-model="selectOption">
+        <label for="phone">Phone</label>
+        <br>
+        <span>Via: {{selectOption}}</span>
+        <h3>Before You Submit, check what you typed!</h3>
+        <h4>Your feedback is: {{message}}</h3>
+        <input type="submit" value="Submit">
+    </div>
+</body>
+<script src='./app.js'></script>
+</html>

@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(255, 255, 255);
+    margin: 10em;
+}
+h1{
+    text-align: center;  
+}
+h3{
+    color: maroon;
+}
+h4{
+    font-style: italic;
+}
+.container{
+    background-color:rgb(246, 182, 252);
+    padding: 15px;
+}
+.container input, textarea{ 
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+    background-color:#000000;
+    color:rgb(255, 255, 255);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+  
+input[type=submit]:hover {
+    background-color:rgb(240, 189, 245);
+}
