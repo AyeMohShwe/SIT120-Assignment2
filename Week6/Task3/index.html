@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week6 Prac</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="v-model-select-dynamic" class="demo">
+        <h3>Choose Product Size:</h3>
+        <select v-model="selected">
+          <option v-for="option in options" v-bind:value="option.value">
+            {{ option.text }}
+          </option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+        <img src="ian-dooley-TT-ROxWj9nA-unsplash.jpg">
+    </div>
+</body>
+<script src='./app.js'></script>
+</html>
+
