@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title id="page_title">{{pageTitle}}</title>
+</head>
+
+<body>
+    <div id="app">
+        <child :text="message"></child>
+    </div>
+
+    <div id="GlobalComponent">
+        <component1></component1>
+        <component2></component2>
+        {{message}}
+    </div>
+    <div id="LocalComponent">
+        <component2></component2>
+        <component1></componetn1>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
